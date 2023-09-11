@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://philfab.github.io/muller_philippe_11_code_092023/client/",
+  "homepage": "https://philfab.github.io/muller_philippe_11_code_092023/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.17.0",
