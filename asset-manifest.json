@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/muller_philippe_11_code_092023/static/css/main.073c9b0a.css",
-    "main.js": "/muller_philippe_11_code_092023/static/js/main.2bb0aed1.js",
-    "static/js/787.c4e7f8f9.chunk.js": "/muller_philippe_11_code_092023/static/js/787.c4e7f8f9.chunk.js",
-    "index.html": "/muller_philippe_11_code_092023/index.html",
-    "main.073c9b0a.css.map": "/muller_philippe_11_code_092023/static/css/main.073c9b0a.css.map",
-    "main.2bb0aed1.js.map": "/muller_philippe_11_code_092023/static/js/main.2bb0aed1.js.map",
-    "787.c4e7f8f9.chunk.js.map": "/muller_philippe_11_code_092023/static/js/787.c4e7f8f9.chunk.js.map"
+    "main.css": "/static/css/main.26d17e13.css",
+    "main.js": "/static/js/main.f8326a65.js",
+    "index.html": "/index.html",
+    "main.26d17e13.css.map": "/static/css/main.26d17e13.css.map",
+    "main.f8326a65.js.map": "/static/js/main.f8326a65.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.2bb0aed1.js"
+    "static/css/main.26d17e13.css",
+    "static/js/main.f8326a65.js"
   ]
 }
