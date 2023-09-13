@@ -8,19 +8,23 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Error from "./pages/Error";
 import "./global.css";
+import SignIn from "./pages/SignIn";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
+<React.StrictMode>
+  <Provider store={store}>
+    <div className="app-container">
       <Router>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/signIn" element={<SignIn />} />
           <Route path="*" element={<Error />} />
         </Routes>
-        <Footer />
       </Router>
-    </Provider>
-  </React.StrictMode>
+      <Footer />
+    </div>
+  </Provider>
+</React.StrictMode>
 );

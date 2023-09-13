@@ -4,8 +4,21 @@
   color: #2c3e50;
 }
 
-body {
+html, body, #root, .app-container {
+  height: 100%;
   margin: 0;
+}
+
+body {
   padding: 0;
   box-sizing: border-box;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+}
+
+Router {
+  flex: 1;
 }
