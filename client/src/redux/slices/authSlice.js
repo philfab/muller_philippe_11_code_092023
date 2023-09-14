@@ -1,35 +1,7 @@
 // Redux Toolkit permet d'écrire un code moins "boilerplate" (-répétitif).
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-/* createAsyncThunk simplifie la gestion des actions et des états pour les opérations asynchrones.
-   3 types d'actions pour chaque appel :
-    pending : déclenchée avant que la requête asynchrone ne soit lancée.
-    fulfilled : déclenchée lorsque la requête asynchrone réussit.
-    rejected : déclenchée lorsque la requête asynchrone échoue.
-*/
-export const loginUser = createAsyncThunk(
-  "auth/loginUser",
-  //thunkAPI =  ensemble d'outils pour gérer la logique asynchrone du thunk
-  async ({ username, password }, thunkAPI) => {
-    try {
-      const response = await fetch("/api/v1/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) throw new Error(data.message);
-
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+import { createSlice } from "@reduxjs/toolkit";
+import { loginUser } from "../../redux/thunks/loginUser";
+import { getUserProfile } from "../../redux/thunks/getUserProfile";
 /*
   createSlice (redux toolkit) permet de définir plus simplement(+concis,-verbeux) les reducers et les actions correspondantes.
   immer (redux toolkit) sous le capot permet de traiter les mises à jour du state de manière immuable (code +lisible +sûr) et
@@ -45,6 +17,7 @@ const authSlice = createSlice({
       lastName: null,
       username: null,
     },
+
     token: null,
     isAuthenticated: false,
     error: null,
@@ -52,12 +25,16 @@ const authSlice = createSlice({
   //Actions
   reducers: {
     // reducers = si cette action se produit voici comment je change mon state.
-    // Action pour réinitialiser le state lorsque l'user se déconnecte.
+    // action pour réinitialiser le state lorsque l'user se déconnecte.
     logout: (state) => {
       state.isAuthenticated = false;
-      state.user = state.token = state.error = null ;
+      state.user = state.token = state.error = null;
+    },
+    clearError: (state) => {
+      state.error = null;
     },
   },
+
   // Action pour mettre à jour le state lorsque l'user se connecte.
   // 'pending' pas implémenté car utilisé pour indiquer une attente (isLoading)comme un spinner.
   extraReducers: (builder) => {
@@ -67,16 +44,21 @@ const authSlice = createSlice({
       // réussite
       .addCase(loginUser.fulfilled, (state, action) => {
         state.isAuthenticated = true;
-        state.user = action.payload.user;
-        state.token = action.payload.token;
+        state.token = action.payload.body.token;
         state.error = null;
       })
       // échec
       .addCase(loginUser.rejected, (state, action) => {
         state.error = action.payload; // message d'erreur recu par thunkAPI.rejectWithValue(error.message)
+      })
+      .addCase(getUserProfile.fulfilled, (state, action) => {
+        state.user = action.payload;
+      })
+      .addCase(getUserProfile.rejected, (state, action) => {
+        state.error = action.payload;
       });
   },
 });
 
-export const { logout } = authSlice.actions;
+export const { logout, clearError } = authSlice.actions;
 export default authSlice.reducer;
