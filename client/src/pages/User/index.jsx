@@ -1,24 +1,16 @@
 import Account from "../../components/Account";
-import { useSelector } from "react-redux";
+
 import { Helmet } from "react-helmet";
+import UserHeader from "../../components/UserHeader";
 
 function User() {
-  const auth = useSelector((state) => state.auth);
-  const { firstName, lastName } = auth.user || {};
-
   return (
     <main className="main bg-dark">
       <Helmet>
         <title>Argent Bank User Page</title>
       </Helmet>
-      <header className="header">
-        <h1>
-          Welcome back
-          <br />
-          {firstName && lastName ? `${firstName} ${lastName}!` : ""}
-        </h1>
-        <button className="edit-button">Edit Name</button>
-      </header>
+
+      <UserHeader />
 
       <h2 className="sr-only">Accounts</h2>
 

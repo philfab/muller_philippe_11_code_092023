@@ -2,6 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginUser } from "../../redux/thunks/loginUser";
 import { getUserProfile } from "../../redux/thunks/getUserProfile";
+import { updateUserName } from "../../redux/thunks/updateUserName";
 /*
   createSlice (redux toolkit) permet de définir plus simplement(+concis,-verbeux) les reducers et les actions correspondantes.
   immer (redux toolkit) sous le capot permet de traiter les mises à jour du state de manière immuable (code +lisible +sûr) et
@@ -15,7 +16,7 @@ const authSlice = createSlice({
     user: {
       firstName: null,
       lastName: null,
-      username: null,
+      userName: null,
     },
 
     token: null,
@@ -53,9 +54,17 @@ const authSlice = createSlice({
       })
       .addCase(getUserProfile.fulfilled, (state, action) => {
         state.user = action.payload;
+        state.error = null;
       })
       .addCase(getUserProfile.rejected, (state, action) => {
         state.error = action.payload;
+      })
+      .addCase(updateUserName.fulfilled, (state, action) => {
+        state.user.userName = action.payload.body.userName; 
+        state.error = null;
+      })
+      .addCase(updateUserName.rejected, (state, action) => {
+        state.error = action.payload; 
       });
   },
 });
