@@ -27,7 +27,7 @@ const Header = () => {
       </NavLink>
       <div>
         {/* TODO : ajouter les liens pour les différentes pages (SignIn + User*/}
-        <NavLink className={styles.navLink} to="/user">
+        <NavLink className={styles.navLink} to={isAuthenticated ? "/user" : "/signIn"}>
           <i className="fa fa-user-circle"></i>
           {/* '?' = opérateur de chaînage optionnel utile si user est null*/}
           {isAuthenticated ? user?.userName : "Sign In"}{" "}

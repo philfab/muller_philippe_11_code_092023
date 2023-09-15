@@ -4,7 +4,10 @@
   color: #2c3e50;
 }
 
-html, body, #root, .app-container {
+html,
+body,
+#root,
+.app-container {
   height: 100%;
   margin: 0;
 }
@@ -12,6 +15,10 @@ html, body, #root, .app-container {
 body {
   padding: 0;
   box-sizing: border-box;
+}
+
+main {
+  background-color: #12002b;
 }
 
 .app-container {

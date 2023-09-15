@@ -1,33 +1,25 @@
 
 import { configureStore } from '@reduxjs/toolkit';
-import { persistStore, persistReducer, createTransform  } from 'redux-persist';
+import { persistStore, persistReducer  } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; 
 import authReducer from "./slices/authSlice";
 import { combineReducers } from 'redux';
+import { createBlacklistFilter } from 'redux-persist-transform-filter';
 
 const rootReducer = combineReducers({
   auth: authReducer
 });
 
-//transformation personnalisée : si on veut seulement persister certaines parties (error)
-const authTransform = createTransform( 
-  // état entrant (state enregistré)
-  (inboundState, key) => {
-    if (key === 'auth') {
-      const { error, ...otherState } = inboundState; // error exclu lors de la sauvegarde de l'état
-      return otherState;
-    }
-    return inboundState;
-  },
-  // état sortant (state récupéré)
-  (outboundState, key) => outboundState
+// Exclure error et loader lors de la persistance
+const saveAuthSubsetFilter = createBlacklistFilter(
+  'auth', 
+  ['error']
 );
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['auth'] ,
-  transforms: [authTransform]
+  transforms: [saveAuthSubsetFilter]
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

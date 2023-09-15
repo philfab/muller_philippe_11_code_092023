@@ -1,5 +1,6 @@
 import Account from "../../components/Account";
 import { useSelector } from "react-redux";
+import { Helmet } from "react-helmet";
 
 function User() {
   const auth = useSelector((state) => state.auth);
@@ -7,6 +8,9 @@ function User() {
 
   return (
     <main className="main bg-dark">
+      <Helmet>
+        <title>Argent Bank User Page</title>
+      </Helmet>
       <header className="header">
         <h1>
           Welcome back

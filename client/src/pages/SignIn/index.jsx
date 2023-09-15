@@ -5,9 +5,9 @@ import { loginUser } from "../../redux/thunks/loginUser";
 import { useNavigate } from "react-router-dom";
 import { clearError } from "../../redux/slices/authSlice";
 import { getUserProfile } from "../../redux/thunks/getUserProfile";
+import { Helmet } from "react-helmet";
 
 const SignIn = () => {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -30,17 +30,17 @@ const SignIn = () => {
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate('/user');
+      navigate("/user");
     }
   }, [isAuthenticated, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isEmailValid) {
-      dispatch(loginUser({username, password}))
+      dispatch(loginUser({ username, password }))
         .unwrap() //extrait la valeur de payload ou rejette la requete
         .then(() => dispatch(getUserProfile()))
-        .catch(error => {
+        .catch((error) => {
           //  gestion erreurs ici
         });
     }
@@ -54,6 +54,9 @@ const SignIn = () => {
 
   return (
     <main className={styles.signInContainer}>
+      <Helmet>
+        <title>Argent Bank Sing-In Page</title>
+      </Helmet>
       <section className={styles.signInContent}>
         <i className="fa fa-user-circle"></i>
         <h1>Sign In</h1>
