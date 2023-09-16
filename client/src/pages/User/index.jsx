@@ -1,15 +1,10 @@
 import Account from "../../components/Account";
-
-import { Helmet } from "react-helmet";
 import UserHeader from "../../components/UserHeader";
+import styles from "./User.module.css";
 
 function User() {
   return (
-    <main className="main bg-dark">
-      <Helmet>
-        <title>Argent Bank User Page</title>
-      </Helmet>
-
+    <main className={styles.userContainer}>
       <UserHeader />
 
       <h2 className="sr-only">Accounts</h2>

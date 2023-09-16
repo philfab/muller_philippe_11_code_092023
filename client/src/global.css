@@ -17,10 +17,6 @@ body {
   box-sizing: border-box;
 }
 
-main {
-  background-color: #12002b;
-}
-
 .app-container {
   display: flex;
   flex-direction: column;

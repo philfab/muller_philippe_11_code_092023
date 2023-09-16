@@ -5,7 +5,6 @@ import { loginUser } from "../../redux/thunks/loginUser";
 import { useNavigate } from "react-router-dom";
 import { clearError } from "../../redux/slices/authSlice";
 import { getUserProfile } from "../../redux/thunks/getUserProfile";
-import { Helmet } from "react-helmet";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -54,9 +53,7 @@ const SignIn = () => {
 
   return (
     <main className={styles.signInContainer}>
-      <Helmet>
-        <title>Argent Bank Sing-In Page</title>
-      </Helmet>
+
       <section className={styles.signInContent}>
         <i className="fa fa-user-circle"></i>
         <h1>Sign In</h1>

@@ -1,6 +1,5 @@
 import styles from "./Error.module.css";
 import { NavLink, useLocation } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 function Error() {
   const location = useLocation(); //hook qui permet d' accéder à l'état de la navigation.
@@ -12,9 +11,6 @@ function Error() {
 
   return (
     <main className={styles.error}>
-      <Helmet>
-        <title>Argent Bank Error Page</title>
-      </Helmet>
       <h1>404</h1>
       <p>{errorMessage}</p>
       <NavLink to="/" className={styles.activeLink}>
