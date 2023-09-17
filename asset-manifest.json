@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/static/css/main.2d011cf6.css",
-    "main.js": "/static/js/main.f8326a65.js",
+    "main.css": "/static/css/main.3aab290f.css",
+    "main.js": "/static/js/main.d90aeaed.js",
+    "static/media/bank-tree.webp": "/static/media/bank-tree.4ae91af74efec29de3d3.webp",
+    "static/media/icon-security.webp": "/static/media/icon-security.3dbaa8aa20576c502a68.webp",
+    "static/media/icon-chat.webp": "/static/media/icon-chat.8eb53e248fee21ba74a3.webp",
+    "static/media/icon-money.webp": "/static/media/icon-money.037bd04fa85c7ad34c64.webp",
+    "static/media/argentBankLogo.webp": "/static/media/argentBankLogo.9f32127cf585365bad7d.webp",
     "index.html": "/index.html",
-    "main.2d011cf6.css.map": "/static/css/main.2d011cf6.css.map",
-    "main.f8326a65.js.map": "/static/js/main.f8326a65.js.map"
+    "main.3aab290f.css.map": "/static/css/main.3aab290f.css.map",
+    "main.d90aeaed.js.map": "/static/js/main.d90aeaed.js.map"
   },
   "entrypoints": [
-    "static/css/main.2d011cf6.css",
-    "static/js/main.f8326a65.js"
+    "static/css/main.3aab290f.css",
+    "static/js/main.d90aeaed.js"
   ]
 }
