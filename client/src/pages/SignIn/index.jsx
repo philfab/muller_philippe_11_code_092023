@@ -101,6 +101,7 @@ const SignIn = () => {
             isDisabled={!username || !password || !isEmailValid}
             content={"Sign In"}
             textUnderline
+            onClick={handleSubmit}
           ></GreenButton>
         </form>
       </section>

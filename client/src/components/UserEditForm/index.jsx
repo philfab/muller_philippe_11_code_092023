@@ -10,7 +10,7 @@ const UserEditForm = ({
 }) => {
 
   const isValidUserName = (name) => {
-    const alphanumeric = /^[a-z0-9]+$/i;
+    const alphanumeric = /^[a-z0-9_]+$/i;
     return name.length >= 4 && alphanumeric.test(name);
   };
 

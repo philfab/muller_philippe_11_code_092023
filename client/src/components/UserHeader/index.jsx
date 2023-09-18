@@ -2,33 +2,38 @@ import UserEditForm from "../UserEditForm";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUserName } from "../../redux/thunks/updateUserName";
+import GreenButton from "../GreenButton";
+import styles from "./UserHeader.module.css";
 
 const UserHeader = () => {
-    const [isEditing, setIsEditing] = useState(false);
-    const auth = useSelector((state) => state.auth);
-    const { firstName, lastName, userName: initialUserName } = auth.user || {};
-    const [currentUserName, setUserName] = useState(initialUserName || "");
-  
-    const handleCancel = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const auth = useSelector((state) => state.auth);
+  const { firstName, lastName, userName: initialUserName } = auth.user || {};
+  const [currentUserName, setUserName] = useState(initialUserName || "");
+  const dispatch = useDispatch();
+
+  const handleEdit = () => {
+    setIsEditing(true);
+  };
+
+  const handleCancel = () => {
+    setUserName(initialUserName);
+    setIsEditing(false);
+  };
+
+  const handleSave = () => {
+    dispatch(updateUserName(currentUserName));
+    setIsEditing(false);
+  };
+
+  useEffect(() => {
+    if (initialUserName) {
       setUserName(initialUserName);
-      setIsEditing(false);
-    };
-
-    const dispatch = useDispatch();
-
-    const handleSave = () => {
-        dispatch(updateUserName(currentUserName));
-        setIsEditing(false);
-      };
-
-      useEffect(() => {
-        if (initialUserName) {
-            setUserName(initialUserName);
-        }
-    }, [initialUserName]);
+    }
+  }, [initialUserName]);
 
   return (
-    <header className="header">
+    <header className={styles.userHeaderContainer}>
       {isEditing ? (
         <UserEditForm
           firstName={firstName}
@@ -45,7 +50,12 @@ const UserHeader = () => {
             <br />
             {firstName && lastName ? `${firstName} ${lastName}!` : ""}
           </h1>
-          <button onClick={() => setIsEditing(true)}>Edit Name</button>
+
+          <GreenButton
+            content={"Edit Name"}
+            onClick={handleEdit}
+            isEdit
+          ></GreenButton>
         </>
       )}
     </header>
