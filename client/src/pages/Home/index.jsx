@@ -7,6 +7,7 @@ import backgroundImage from '../../assets/images/bank-tree.webp';
 
 const Home = () => (
   <main>
+  
     <section style={{ backgroundImage: `url(${backgroundImage})` }} className={styles.hero}>
       <div className={styles.heroContent}>
         <h2 className={styles.srOnly}>Promoted Content</h2>

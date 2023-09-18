@@ -15,7 +15,6 @@
     "express": "^4.17.1",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^5.9.21",
-    "serverless-http": "^3.2.0",
     "swagger-ui-express": "^4.1.4",
     "yamljs": "^0.3.0"
   },

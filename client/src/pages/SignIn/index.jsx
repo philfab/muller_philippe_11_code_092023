@@ -5,6 +5,7 @@ import { loginUser } from "../../redux/thunks/loginUser";
 import { useNavigate } from "react-router-dom";
 import { clearError } from "../../redux/slices/authSlice";
 import { getUserProfile } from "../../redux/thunks/getUserProfile";
+import GreenButton from "../../components/GreenButton";
 
 const SignIn = () => {
   const [username, setUsername] = useState("");
@@ -53,7 +54,6 @@ const SignIn = () => {
 
   return (
     <main className={styles.signInContainer}>
-
       <section className={styles.signInContent}>
         <i className="fa fa-user-circle"></i>
         <h1>Sign In</h1>
@@ -97,14 +97,11 @@ const SignIn = () => {
             />
             <label htmlFor="remember-me">Remember me</label>
           </div>
-          <button
-            className={styles.signInButton}
-            type="submit"
-            disabled={!username || !password || !isEmailValid}
-            // désactivé si l'un des champs est vide ou si l'email n'est pas valide
-          >
-            Sign In
-          </button>
+          <GreenButton
+            isDisabled={!username || !password || !isEmailValid}
+            content={"Sign In"}
+            textUnderline
+          ></GreenButton>
         </form>
       </section>
     </main>

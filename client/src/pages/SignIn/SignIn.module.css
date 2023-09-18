@@ -1,4 +1,43 @@
 .signInContainer {
-    height: 100%;
-    background-color: #12002b;
-   }
+  height: 100%;
+  background-color: #12002b;
+}
+
+.signInContent {
+  box-sizing: border-box;
+  background-color: white;
+  width: 300px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  padding: 2rem;
+}
+
+.inputRemember {
+  display: flex;
+}
+
+.inputRemember label {
+  margin-left: 0.25rem;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.inputWrapper label {
+  font-weight: bold;
+  text-align: left;
+}
+
+.inputWrapper input {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+
+.error{
+    color: crimson;
+    font-weight: bold;
+}
