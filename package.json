@@ -24,6 +24,7 @@
     "populate-db": "node ./server/scripts/populateDatabase.js",
     "server": "node ./server/server.js"
   },
+  
   "devDependencies": {
     "concurrently": "^8.2.1",
     "nodemon": "^2.0.4"
