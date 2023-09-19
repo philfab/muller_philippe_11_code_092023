@@ -19,11 +19,13 @@
     "yamljs": "^0.3.0"
   },
   "scripts": {
+    "start": "concurrently \"cd client && npm start\" \"node ./server/server.js\"",
     "dev:server": "nodemon ./server/server.js",
     "populate-db": "node ./server/scripts/populateDatabase.js",
     "server": "node ./server/server.js"
   },
   "devDependencies": {
+    "concurrently": "^8.2.1",
     "nodemon": "^2.0.4"
   }
 }
