@@ -19,14 +19,16 @@
     "redux-persist-transform-filter": "^0.0.22",
     "web-vitals": "^2.1.4"
   }, 
-    "scripts": {
-    "start": "react-scripts start",
+  "scripts": {
+    "start": "concurrently \"npm run server\" \"react-scripts start\"",
+    "server": "cd .. && npm run server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
