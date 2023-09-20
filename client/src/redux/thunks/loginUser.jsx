@@ -1,6 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-const API_BASE_URL = "http://localhost:3001/api/v1";
+import { API_BASE_URL } from "./apiConfig";
 
 /* createAsyncThunk simplifie la gestion des actions et des états pour les opérations asynchrones.
    3 types d'actions pour chaque appel :
