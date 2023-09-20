@@ -1,0 +1,24 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.error h1 {
+  margin: 20px;
+  font-size: 10rem;
+}
+
+.error p {
+   font-size: 1.5rem;
+}
+
+.activeLink {
+  text-decoration: underline;
+}
+
+.error p ,.activeLink{
+    margin-bottom: 100px;
+}

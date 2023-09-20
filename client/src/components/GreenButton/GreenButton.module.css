@@ -1,0 +1,28 @@
+.greenButton {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  border-color: #00bc77;
+  background-color: #00bc77;
+  color: #fff;
+  cursor: pointer;
+}
+
+.textUnderline {
+  text-decoration: underline;
+}
+
+.disabledButton {
+    color: darkslategray;
+    cursor: not-allowed;
+  }
+
+.editButton{
+  display: inline-block;
+  margin-top: 0;
+  width: 100px;
+  font-size: 1rem;
+}
