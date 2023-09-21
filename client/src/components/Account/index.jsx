@@ -1,16 +1,18 @@
+import GreenButton from "../GreenButton";
+import styles from "./Account.module.css";
+
 function Account({ title, amount, description }) {
-    return (
-        <section className="account">
-            <div className="account-content-wrapper">
-                <h3 className="account-title">{title}</h3>
-                <p className="account-amount">{amount}</p>
-                <p className="account-amount-description">{description}</p>
-            </div>
-            <div className="account-content-wrapper cta">
-                <button className="transaction-button">View transactions</button>
-            </div>
-        </section>
-    );
+  return (
+    <section className={styles.accountContainer}>
+      <div className={styles.accountWrapper}>
+        <h3 className={styles.accountTitle}>{title}</h3>
+        <p className={styles.accountAmount}>{amount}</p>
+        <p className={styles.accountDescription}>{description}</p>
+      </div>
+
+      <GreenButton isTransaction content="View transactions" />
+    </section>
+  );
 }
 
 export default Account;

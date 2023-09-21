@@ -1,4 +1,6 @@
 import { useState } from "react";
+import GreenButton from "../GreenButton";
+import styles from "./UserEdit.module.css";
 
 const UserEditForm = ({
   firstName,
@@ -23,25 +25,25 @@ const UserEditForm = ({
   };
 
   return (
-    <div>
+    <section className={styles.containerUser}>
       <h1>Edit user info</h1>
       <div>
-        <label>User Name</label>
+        <label>User Name : </label>
         <input value={userName} onChange={handleUserNameChange} />
       </div>
       <div>
-        <label>First Name</label>
+        <label>First Name : </label>
         <input value={firstName} disabled />
       </div>
       <div>
-        <label>Last Name</label>
+        <label>Last Name : </label>
         <input value={lastName} disabled />
       </div>
-      <div>
-        <button onClick={onSave} disabled={!isValid}>Save</button>
-        <button onClick={onCancel}>Cancel</button>
+      <div className={styles.containerButtons}>
+        <GreenButton isEdit isDisabled={!isValid} content="Save" onClick={onSave}/>
+        <GreenButton isEdit content="Cancel" onClick={onCancel}/>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -9,6 +9,7 @@
   background-color: #00bc77;
   color: #fff;
   cursor: pointer;
+  border-radius: 3px;
 }
 
 .textUnderline {
@@ -23,6 +24,19 @@
 .editButton{
   display: inline-block;
   margin-top: 0;
-  width: 100px;
+  width: 120px;
   font-size: 1rem;
+}
+
+.transactionButton {
+  display: inline-block;
+  margin-top: 0;
+  width: 200px;
+}
+
+@media (max-width: 720px) {
+  .transactionButton {
+    width: 100%;
+    margin-top: 15px;
+  }
 }
