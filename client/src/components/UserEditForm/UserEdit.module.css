@@ -1,0 +1,27 @@
+.containerUser {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerUser label {
+  color: white;
+}
+
+.containerUser input{
+    text-align: left;
+    padding: 5px;
+}
+
+.containerUser h1{
+  font-size: 2rem;
+}
+
+.containerButtons {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 25px;
+}
+

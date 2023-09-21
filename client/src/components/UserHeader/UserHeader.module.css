@@ -1,3 +1,7 @@
+.userHeaderContainer {
+ margin-bottom: 30px;
+}
+
 .userHeaderContainer h1 {
   color: white;
 }
