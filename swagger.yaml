@@ -156,7 +156,7 @@ paths:
       tags:
         - Transactions
       summary: Update transaction details
-      description: Update category and note of a transaction
+      description: Update category and/or note of a transaction
       parameters:
         - in: path
           name: transactionId
